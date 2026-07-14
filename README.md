@@ -41,7 +41,7 @@
  ------------------------------------------------
  
 ## Project Structure
-
+```
 TechCore-monitor/
 │
 ├── css/
@@ -52,7 +52,7 @@ TechCore-monitor/
 │
 └── templates/
     └── dashboard.html
-
+```
 
 ## Directory Description
 
