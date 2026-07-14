@@ -11,15 +11,16 @@
 
 ## Features
 
- -CPU usage monitoring
- -Memory usage monitoring
- -Disk space monitoring
- -Server uptime tracking
- -IP address and network information display
- -SSH server health monitoring
- -Nginx server health monitoring
- -Automation dashboard updates using cron jobs
- -Bash-based system health data collection
+- CPU usage monitoring
+- Memory usage monitoring
+- Disk space monitoring
+- Server uptime tracking
+- IP address and network information display
+- SSH service health monitoring
+- Nginx service health monitoring
+- Automated dashboard updates using cron jobs
+- Bash-based system information collection
+- Web-based server health dashboard
 
 ## Technologies Used
  ------------------------------------------------
