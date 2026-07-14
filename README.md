@@ -40,7 +40,10 @@ TechCore-monitor/
 │
 ├── css/
 │   └── style.css
-│
+|
+├── docs/
+│   └── dashboard.png
+|
 ├── scripts/
 │   └── server_health.sh
 │
@@ -58,6 +61,9 @@ Contains the HTML dashboard used to display the collected server information.
 
 **css/**  
 Contains the styling file used to improve the dashboard presentation.
+
+**docs/**  
+Contains project documentation files such as dashboard screenshots and visual references.
 
 ## How It Works
 
