@@ -134,6 +134,8 @@ Run monitoring script:
 - Git Version Control
 - SSH Authentication
 
+## Dashboard Preview 
+![Techcore Infrastructure Monitor Dashboard](docs/dashboard.png)
 ## Future Improvements
 
 - Add historical monitoring data storage
