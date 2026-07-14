@@ -23,24 +23,17 @@
 - Web-based server health dashboard
 
 ## Technologies Used
- ------------------------------------------------
+ 
  |    Component	     |	 Technology	             |
  |-------------------|--------------------------|
  | Operating System  |  Ubuntu Server 24.04 LTS |
- | 		                |			 	                     |
- | Scripting	        |	 Bash		                  | 
- |            		     |               			        |		
- | Web Server	       |	Nginx	       	           |	
- |            		     |	               		        |
- | Wed technologies  |	HTML,CSS       	         |
- |             	     |               			        |	
+ | Scripting	        |	 Bash		                  | 		
+ | Web Server	       |	Nginx	       	           |
+ | Wed technologies  |	HTML,CSS       	         |	
  | Automation  	     | 	Cron Jobs      	        |
- |            		     |			                       |
- | Version Control   |	Git & Github	            |
- |            		     |                		        |	
+ | Version Control   |	Git & Github	            |	
  | Virtualization    | 	VirtualBox	             |
- ------------------------------------------------
- 
+
 ## Project Structure
 ```
 TechCore-monitor/
