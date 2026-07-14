@@ -1,0 +1,56 @@
+<!DOCKTYPE html>
+<html>
+<head>
+	<meta charset="UTF -8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TechCore Infrastructure Platform</title>
+
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<h1>TechCore Server Health Dashboard</h1>
+			<p>Real-time Linux Server Monitoring</p>
+		</div>
+	<div class="card">
+
+			<h2>System Information</h2>
+			<p><strong>Hostname:</strong> $HOSTNAME</p>
+			<p><strong>IP Address:</strong> $IP_ADDRESS</p>
+			<p><strong>Uptime:</strong> $UPTIME</p>
+		</div>
+		<div class="card">
+			<h2>Resources</h2>
+			<div class="resource-grid">
+			<p><strong>CPU Usage:</strong> $CPU_USAGE%</p>
+			<p><strong>Memory Usage:</strong> $MEMORY_USAGE</p>
+			<p><strong>Disk Usage:</strong> $DISK_USAGE</p>
+			<p><strong>Load Average:</strong> $LOAD_1MIN, $LOAD_5MIN, $LOAD_15MIN</p>
+			<p><strong>Load Status:</strong><span class="$LOAD_CLASS"> $LOAD_STATUS</span></p>
+			</div>
+		</div>
+		<div class="card">
+
+			<h2>Services</h2>
+			<p><strong>SSH:</strong><span class="$SSH_CLASS"> $SSH_STATUS</span></p>
+			<p><strong>NGINX:</strong><span class="$NGINX_CLASS"> $NGINX_STATUS</span></p>
+		</div>
+		<div class="card">
+			<h2>Network</h2>
+			<p><strong>Internet:</strong><span class="$NETWORK_CLASS"> $NETWORK_STATUS</span></p>
+		</div>
+		<div class="card">
+
+			<h2>Overall Health</h2>
+			<p><strong>Health Status:</strong><span class="$HEALTH_CLASS"> $OVERALL_HEALTH</span></p>
+		</div>
+		<div class="footer">
+
+			<p><strong>Last Updated</strong></p>
+			<p>$LAST_UPDATED</p>
+			<p>Techcore Infrastrucutre Monitor</p>
+		</div>
+	</div>
+</body>
+</html>

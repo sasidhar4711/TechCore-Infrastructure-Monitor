@@ -1,0 +1,19 @@
+# Generated dashboard
+status.html
+
+# Temporary files
+*.tmp
+*.log
+*.bak
+
+# Backup files
+*.old
+*.backup
+
+# Editor files
+*.swp
+*.~
+
+# Os files
+,DS_Store
+Thumbs.db
