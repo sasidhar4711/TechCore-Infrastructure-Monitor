@@ -175,8 +175,9 @@ Run the script manually:
 # Dashboard Preview
 
 The dashboard displays the current Linux server health including CPU usage, memory usage, disk usage, uptime, networking information, and service status.
-
-![TechCore Infrastructure Monitor Dashboard](docs/dashboard.png)
+<p align="center">
+  <img src="docs/dashboard.png" alt="TechCore Infrastructure Monitor Dashboard" width="900">
+</p>
 
 
 # What I'd Do Differently
