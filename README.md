@@ -1,160 +1,199 @@
-#TechCore Infrastructure Monitor
+# TechCore Infrastructure Monitor
 
 ## Overview
- 
- TechCore Infrastructure Monitor is a Linux-based server monitoring platform built on Ubuntu server 24.04 LTS.
 
- The project collects important system health information suxh as CPU usage, memory usage, dish usage, uptime, network information, and serverstatus, 
- then displays the collected data through a web dashboard served using Nginx.
+### Problem
 
- This project was built to practise Linux System administration, Bash scripting, automation, networking concepts, and sever monitoring fundamentals.
+Checking the health of a Linux server typically requires logging in through SSH and manually running multiple commands such as `top`, `free -h`, `df -h`, `uptime`, and `systemctl status`. This process is repetitive, time-consuming, and provides no persistent overview of the server's current health.
 
-## Features
+### Solution
 
+TechCore Infrastructure Monitor automates this process using Bash scripting and cron jobs. System metrics are collected at scheduled intervals and presented through a lightweight web dashboard served by Nginx, providing an always-available overview of the server's health.
+
+TechCore Infrastructure Monitor is a Linux-based server monitoring platform built on **Ubuntu Server 24.04 LTS**. It collects CPU usage, memory usage, disk usage, uptime, network information, and service status, then displays the collected information through a web dashboard.
+
+The project was built to strengthen Linux system administration, Bash scripting, automation, networking fundamentals, and server monitoring skills.
+
+> **Note:**  
+> This project was developed and tested on a single Ubuntu Server. The overall monitoring architecture is intended to be extended into a multi-server infrastructure in **TechCore v2**, currently under development.
+
+
+# Features
+
+- Automated Linux server health monitoring
 - CPU usage monitoring
 - Memory usage monitoring
-- Disk space monitoring
+- Disk usage monitoring
 - Server uptime tracking
-- IP address and network information display
+- Network information display
 - SSH service health monitoring
 - Nginx service health monitoring
 - Automated dashboard updates using cron jobs
-- Bash-based system information collection
-- Web-based server health dashboard
+- Lightweight Bash-based monitoring solution
+- Web-based monitoring dashboard
 
-## Technologies Used
- 
- |    Component	     |	 Technology	             |
- |-------------------|--------------------------|
- | Operating System  |  Ubuntu Server 24.04 LTS |
- | Scripting	        |	 Bash		                  | 		
- | Web Server	       |	Nginx	       	           |
- | Wed technologies  |	HTML,CSS       	         |	
- | Automation  	     | 	Cron Jobs      	        |
- | Version Control   |	Git & Github	            |	
- | Virtualization    | 	VirtualBox	             |
 
-## Project Structure
+# Technologies Used
+
+| Component | Technology |
+|------------|------------|
+| Operating System | Ubuntu Server 24.04 LTS |
+| Scripting | Bash |
+| Web Server | Nginx |
+| Frontend | HTML, CSS |
+| Automation | Cron |
+| Version Control | Git & GitHub |
+
+
+# Architecture
+
+```text
+Ubuntu Server
+        │
+        │
+server_health.sh
+(runs automatically via cron)
+        │
+        │
+Collects:
+• CPU Usage
+• Memory Usage
+• Disk Usage
+• Uptime
+• Network Information
+• Service Status
+        │
+        │
+Generates Dashboard HTML
+        │
+        │
+Nginx Web Server
+        │
+        │
+Web Browser
 ```
+
+
+# Project Structure
+
+```text
 TechCore-monitor/
 │
 ├── css/
 │   └── style.css
-|
+│
 ├── docs/
-│   └── dashboard.png
-|
+│   ├── dashboard.png
+│   └── architecture-diagram.svg
+│
 ├── scripts/
 │   └── server_health.sh
 │
-└── templates/
-    └── dashboard.html
+├── templates/
+│   └── dashboard.html
+│
+├── README.md
+└── .gitignore
 ```
 
-## Directory Description
 
-**scripts/**  
-Contains the Bash script responsible for collecting server health information such as CPU usage, memory usage, disk usage, uptime, network details, and service status.
+# Directory Description
 
-**templates/**  
-Contains the HTML dashboard used to display the collected server information.
+### scripts/
 
-**css/**  
-Contains the styling file used to improve the dashboard presentation.
+Contains the Bash script responsible for collecting Linux system health information including CPU usage, memory usage, disk usage, uptime, network details, and service status.
 
-**docs/**  
-Contains project documentation files such as dashboard screenshots and visual references.
+### templates/
 
-## How It Works
+Contains the HTML dashboard template used to display the collected monitoring information.
 
-```
-Ubuntu Server VM
-        |
-        |
-server_health.sh
-        |
-        |
-Collect System Information
-        |
-        |
-Generate Dashboard Output
-        |
-        |
-Nginx Web Server
-        |
-        |
-Web Browser
-```
+### css/
 
-The Bash monitoring script collects system metrics from the Linux server and generates the dashboard information.
+Contains the stylesheet used to improve the dashboard presentation.
 
-Nginx serves the dashboard webpage, allowing users to view the current health status of the server.
+### docs/
 
-## Automation
+Contains project documentation assets including dashboard screenshots .
 
-The project uses cron jobs to automatically execute the monitoring script at scheduled intervals.
+
+# Automation
+
+The monitoring script is executed automatically using cron.
 
 Example:
 
-```
+```bash
 */5 * * * * /path/to/server_health.sh
 ```
 
-This allows the dashboard information to update automatically without manually running the script.
+This keeps the dashboard updated without requiring manual execution.
 
-## Setup Instructions
+
+# Setup
 
 Clone the repository:
 
-```
+```bash
 git clone git@github.com:sasidhar4711/TechCore-Infrastructure-Monitor.git
 ```
 
-Navigate to the project directory:
+Navigate into the project:
 
-```
+```bash
 cd TechCore-monitor
 ```
 
-Give script execution permission:
+Make the monitoring script executable:
 
-```
+```bash
 chmod +x scripts/server_health.sh
 ```
 
-Run monitoring script:
+Run the script manually:
 
-```
+```bash
 ./scripts/server_health.sh
 ```
 
-## Skills Demonstrated
+> **Note:**  
+> This repository contains the project source code. Deployment requires an Ubuntu Server with Nginx and cron configured.
 
-- Linux Server Administration
+
+# Skills Demonstrated
+
+- Linux System Administration
 - Bash Scripting
-- File and Permission Management
-- Process and Service Management
-- Networking Fundamentals
 - Nginx Configuration
 - Cron Automation
-- Git Version Control
 - SSH Authentication
-
-## Dashboard Preview 
-![Techcore Infrastructure Monitor Dashboard](docs/dashboard.png)
-## Future Improvements
-
-- Add historical monitoring data storage
-- Add CPU and memory graphs
-- Add alert notifications
-- Add authentication for dashboard access
-- Integrate advanced monitoring tools such as Prometheus and Grafana
+- Networking Fundamentals
+- Process & Service Management
+- File & Permission Management
+- Git & GitHub
 
 
+# Dashboard Preview
+
+The dashboard displays the current Linux server health including CPU usage, memory usage, disk usage, uptime, networking information, and service status.
+
+![TechCore Infrastructure Monitor Dashboard](docs/dashboard.png)
 
 
+# What I'd Do Differently
+
+- Store historical monitoring data instead of only displaying the current snapshot.
+- Separate metric collection from HTML generation for better maintainability.
+- Protect dashboard access using authentication.
+- Improve the Bash script by modularizing repeated logic.
+- Add basic automated testing for parsing functions.
 
 
+# Future Improvements
 
-
-
+- Historical monitoring data storage
+- CPU and memory usage graphs
+- Alert notifications
+- Dashboard authentication
+- Prometheus integration
+- Grafana dashboards
+- Multi-server monitoring (TechCore v2)
